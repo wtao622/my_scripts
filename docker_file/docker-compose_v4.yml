@@ -1,0 +1,19 @@
+version: "2.0"
+services:
+  jd:
+    image: nevinee/jd:v4
+    container_name: jd_v4
+    restart: always
+    tty: true
+    network_mode: bridge
+    hostname: jd_v4
+    volumes:
+      - ./config:/jd_v4/config
+      - ./log:/jd_v4/log
+      - ./own:/jd_v4/own
+    ports:
+      - 8765:5678
+    environment: 
+      - ENABLE_TTYD=true         # 是否在启动容器时自动启动网页终端，当ENABLE_WEB_PANEL=true时此项设置才生效，ttyd未做防护，容易被黑进去，建议不要启用
+      - ENABLE_WEB_PANEL=true    # 是否在启动容器时自动启动控制面板，启用后不改密码导致被黑本人不负责
+      - ENABLE_HANGUP=false       # 是否在启动容器时自动启动挂机程序
