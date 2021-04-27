@@ -1,0 +1,1 @@
+1 0-23/1 * * * bash jd jd_super_redrain
