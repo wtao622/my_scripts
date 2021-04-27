@@ -49,14 +49,14 @@ var tg_arr , tg_arr_len , j ,k ;
 // =======================================钉钉机器人通知设置区域===========================================
 //此处填你钉钉 bot 的webhook，例如：5a544165465465645d0f31dca676e7bd07415asdasd
 //(环境变量名 DD_BOT_TOKEN)
-let DD_BOT_TOKEN = '';
+let DD_BOT_TOKEN = 'f23056f69ebf6ceb1310ebbfd43cedc32a503895778a042957668508be92ef61';
 //密钥，机器人安全设置页面，加签一栏下面显示的SEC开头的字符串
-let DD_BOT_SECRET = '';
+let DD_BOT_SECRET = 'SEC8dcc1434290e5512e4e276c2afc4b10bf579373e4177c7710e8f0d4732878629';
 
 // =======================================企业微信机器人通知设置区域===========================================
 //此处填你企业微信机器人的 webhook(详见文档 https://work.weixin.qq.com/api/doc/90000/90136/91770)，例如：693a91f6-7xxx-4bc4-97a0-0ec2sifa5aaa
 //(环境变量名 QYWX_KEY)
-let QYWX_KEY = '65bfa3e4-21a8-4586-92b8-030436c62eb3';
+let QYWX_KEY = '';
 
 // =======================================企业微信应用消息通知设置区域===========================================
 //此处填你企业微信应用消息的 值(详见文档 https://work.weixin.qq.com/api/doc/90000/90135/90236)，依次填上corpid的值,corpsecret的值,touser的值,agentid的值，素材库图片id（见https://github.com/LXK9301/jd_scripts/issues/519) 注意用,号隔开，例如：wwcff56746d9adwers,B-791548lnzXBE6_BWfxdf3kSTMJr9vFEPKAbh6WERQ,mingcheng,1000001,2COXgjH2UIfERF2zxrtUOKgQ9XklUqMdGSWLBoW_lSDAdafat

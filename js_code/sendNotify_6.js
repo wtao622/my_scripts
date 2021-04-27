@@ -32,8 +32,8 @@ let BARK_SOUND = '';
 let TG_BOT_TOKEN = '1465723424:AAHtll4rVcg7QcIbFu_wyWJ-AvzWi9w4ivE';
 //此处填你接收通知消息的telegram用户的id，例如：129xxx206
 //(环境变量名 TG_USER_ID)
-let TG_USER_ID = '1505202306';
-let TG_ID = '1505202306';
+let TG_USER_ID = '247076382';
+let TG_ID = '247076382';
 
 
 //请在config。sh文件中定义变量 TG_ID ，使用 “&” 进行分隔
@@ -56,7 +56,7 @@ let DD_BOT_SECRET = 'SEC8dcc1434290e5512e4e276c2afc4b10bf579373e4177c7710e8f0d47
 // =======================================企业微信机器人通知设置区域===========================================
 //此处填你企业微信机器人的 webhook(详见文档 https://work.weixin.qq.com/api/doc/90000/90136/91770)，例如：693a91f6-7xxx-4bc4-97a0-0ec2sifa5aaa
 //(环境变量名 QYWX_KEY)
-let QYWX_KEY = '65bfa3e4-21a8-4586-92b8-030436c62eb3';
+let QYWX_KEY = '';
 
 // =======================================企业微信应用消息通知设置区域===========================================
 //此处填你企业微信应用消息的 值(详见文档 https://work.weixin.qq.com/api/doc/90000/90135/90236)，依次填上corpid的值,corpsecret的值,touser的值,agentid的值，素材库图片id（见https://github.com/LXK9301/jd_scripts/issues/519) 注意用,号隔开，例如：wwcff56746d9adwers,B-791548lnzXBE6_BWfxdf3kSTMJr9vFEPKAbh6WERQ,mingcheng,1000001,2COXgjH2UIfERF2zxrtUOKgQ9XklUqMdGSWLBoW_lSDAdafat
