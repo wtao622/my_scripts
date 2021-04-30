@@ -11,7 +11,7 @@ Github Actions使用方法见[@lxk0301](https://raw.githubusercontent.com/lxk030
 const $ = new Env("中青看点阅读")
 //const notify = $.isNode() ? require('./sendNotify') : '';
 let ReadArr = [], timebodyVal ="";
-let YouthBody = $.getdata('youth_autoread')||$.getdata("zqgetbody_body");
+let YouthBody = $.getdata('youth_autoread_3')||$.getdata("zqgetbody_body");
 let smallzq = $.getdata('youth_cut');
 let indexLast = $.getdata('zqbody_index');
 let artsnum = 0, videosnum = 0;
@@ -192,11 +192,11 @@ function AutoRead() {
 
 function removebody() {
   if (articlebody !== ReadArr[0]) {
-      smallbody = $.getdata('youth_autoread').replace("&" + articlebody, "");
+      smallbody = $.getdata('youth_autoread_2').replace("&" + articlebody, "");
   } else {
-      smallbody = $.getdata('youth_autoread').replace(articlebody + "&", "")
+      smallbody = $.getdata('youth_autoread_2').replace(articlebody + "&", "")
   }
-  $.setdata(smallbody, 'youth_autoread')
+  $.setdata(smallbody, 'youth_autoread_2')
 }
 
 function batHost(api, body) {
@@ -232,13 +232,13 @@ function Getbody() {
                 $.log("此阅读请求已存在，本次跳过")
             } else if (YouthBody.indexOf(bodyVal) == -1) {
                 YouthBodys = YouthBody + "&" + bodyVal;
-                $.setdata(YouthBodys, 'youth_autoread');
+                $.setdata(YouthBodys, 'youth_autoread_2');
                 $.log(`${$.name}获取阅读: 成功, YouthBodys: ${bodyVal}`);
                 bodys = YouthBodys.split("&")
                 $.msg($.name, "获取第" + bodys.length + "个阅读请求: 成功🎉", ``)
             }
         } else {
-            $.setdata(bodyVal, 'youth_autoread');
+            $.setdata(bodyVal, 'youth_autoread_2');
             $.log(`${$.name}获取阅读: 成功, YouthBodys: ${bodyVal}`);
             $.msg($.name, `获取第一个阅读请求: 成功🎉`, ``)
         }
