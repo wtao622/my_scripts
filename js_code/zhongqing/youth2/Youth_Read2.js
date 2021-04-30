@@ -51,6 +51,9 @@ if (!$.isNode() && !YouthBody == true) {
         }
     })
 }
+YouthBodys = YOUTH_READ.split('&');
+ReadArr.push(YouthBodys);
+
 timeZone = new Date().getTimezoneOffset() / 60;
 timestamp = Date.now() + (8 + timeZone) * 60 * 60 * 1000;
 bjTime = new Date(timestamp).toLocaleString('zh', {
