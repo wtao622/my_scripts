@@ -32,8 +32,8 @@ let BARK_SOUND = '';
 let TG_BOT_TOKEN = '1465723424:AAHtll4rVcg7QcIbFu_wyWJ-AvzWi9w4ivE';
 //此处填你接收通知消息的telegram用户的id，例如：129xxx206
 //(环境变量名 TG_USER_ID)
-let TG_USER_ID = '247076382';
-let TG_ID = '247076382';
+let TG_USER_ID = '';
+let TG_ID = '';
 
 
 //请在config。sh文件中定义变量 TG_ID ，使用 “&” 进行分隔
@@ -49,9 +49,11 @@ var tg_arr , tg_arr_len , j ,k ;
 // =======================================钉钉机器人通知设置区域===========================================
 //此处填你钉钉 bot 的webhook，例如：5a544165465465645d0f31dca676e7bd07415asdasd
 //(环境变量名 DD_BOT_TOKEN)
-let DD_BOT_TOKEN = 'f23056f69ebf6ceb1310ebbfd43cedc32a503895778a042957668508be92ef61';
+let DD_BOT_TOKEN = '2aa3905105945014232258ee50f35604e0e8e7f5687092f6a3509a6c9a795f29';
 //密钥，机器人安全设置页面，加签一栏下面显示的SEC开头的字符串
-let DD_BOT_SECRET = 'SEC8dcc1434290e5512e4e276c2afc4b10bf579373e4177c7710e8f0d4732878629';
+let DD_BOT_SECRET = 'SECaaa08485857b279d9774257d0fdd45d28fdb6828537fb64447dfaa90089c492c';
+
+
 
 // =======================================企业微信机器人通知设置区域===========================================
 //此处填你企业微信机器人的 webhook(详见文档 https://work.weixin.qq.com/api/doc/90000/90136/91770)，例如：693a91f6-7xxx-4bc4-97a0-0ec2sifa5aaa
