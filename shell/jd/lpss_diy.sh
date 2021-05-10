@@ -50,7 +50,7 @@ for npc_scripts in my_scripts_list
 
                 for npc_cron in my_cron_list
                 do
-                    cr_result = $($npc_cron | grep "${npc_scripts}")
+                    cr_result = $(echo $npc_cron | grep "${npc_scripts}")
                         if [[ "$cr_result" != "" ]];then
                             echo -e "$scripts 脚本计划任务正在添加～ \n"
                             echo "$npc_cron" >> /jd/config/crontab.list
