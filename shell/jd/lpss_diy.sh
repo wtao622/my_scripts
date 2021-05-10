@@ -42,9 +42,9 @@ for npc_scripts in my_scripts_list
         eval sc_result=$(cat /jd/config/crontab.list | grep "${npc_scripts}")
 
             if [[ "$sc_result" != "" ]];then
-                echo -e "${scripts} 脚本计划任务已存在，无需更新～ \n"
+                echo -e "${npc_scripts} 脚本计划任务已存在，无需更新～ \n"
             else
-                echo -e "${scripts} 脚本计划任务不存在，正在更新～ \n"
+                echo -e "${npc_scripts} 脚本计划任务不存在，正在更新～ \n"
 
                 #遍历 my_cron_list 添加对应脚本的 cron 
 
@@ -52,10 +52,10 @@ for npc_scripts in my_scripts_list
                 do
                     eval cr_result=$(echo $npc_cron | grep "${npc_scripts}")
                         if [[ "$cr_result" != "" ]];then
-                            echo -e "${scripts} 脚本计划任务正在添加～ \n"
+                            echo -e "${npc_scripts} 脚本计划任务正在添加～ \n"
                             echo "$npc_cron" >> /jd/config/crontab.list
                             crontab /jd/config/crontab.list
-                            echo -e "${scripts} 脚本添加完成～ \n"
+                            echo -e "${npc_scripts} 脚本添加完成～ \n"
                         else
                             echo -e "请在 my_cron_list 添加 ${scripts} 脚本的计划任务～ \n"
                         fi 
