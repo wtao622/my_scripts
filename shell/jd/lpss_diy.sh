@@ -3,7 +3,7 @@
 # 脚本作者 ：  lpssxs
 # 更新时间 ：  2021/5/10 
 
-#以下脚本主要适用 jd docker v3 & v4  
+#以下脚本主要适用 jd docker v3 & v4  , jd_ql 暂时无法使用
 #下载后请放于  /jd/config/ 目录下
 #赋予脚本执行权限 chmod +x /jd/config/lpss_diy.sh
 #建议手动添加以下计划任务 */10 * * * * bash /jd/config/lpss_diy.sh >/dev/null 2>&1
@@ -58,7 +58,7 @@ for npc_scripts in $my_scripts_list_add
             fi
     done
 
-    #遍历 my_scripts_list_del 进行删除
+    #遍历 my_scripts_list_del 进行删除~
 
 
 
