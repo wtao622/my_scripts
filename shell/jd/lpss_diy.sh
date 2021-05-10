@@ -41,7 +41,7 @@ for npc_scripts in $my_scripts_list_add
 
     do 
 
-         eval sc_result=$(cat /jd/config/crontab.list | grep "${npc_scripts}")
+          sc_result=$(cat /jd/config/crontab.list | grep "${npc_scripts}")
 
             if [[ "$sc_result" != "" ]];then
                 echo -e "${npc_scripts} 脚本计划任务已存在，无需更新～ \n"
