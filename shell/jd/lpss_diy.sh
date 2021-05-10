@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
+# 脚本作者 ：  lpssxs
+# 更新时间 ：  2021/5/10 
+
 #以下脚本主要适用 jd docker v3 & v4  
 #下载后请放于  /jd/config/ 目录下
 #赋予脚本执行权限 chmod +x /jd/config/lpss_diy.sh
+#建议手动添加以下计划任务 */10 * * * * bash /jd/config/lpss_diy.sh >/dev/null 2>&1
 
 # 下载需要添加的脚本 link 
 
@@ -54,7 +58,7 @@ for npc_scripts in my_scripts_list
                             echo -e "$scripts 脚本添加完成～ \n"
                         else
                             echo -e "请在 my_cron_list 添加该脚本的计划任务～ \n"
-                        if 
+                        fi 
                 done
 
             fi
@@ -69,6 +73,7 @@ cp -rf  /jd/home.html /jd/panel/public
 echo -e "Home cookies 按钮修复完成!!!\n"
 
 #执行完毕后自动更新 lpss_diy.sh 
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_diy.sh -O /jd/config/lpss_diy.sh && chmod +x /jd/config/lpss_diy.sh
 
 
 
