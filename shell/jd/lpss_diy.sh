@@ -27,12 +27,11 @@ jd_adolf_ETIP
 "
 
 #添加需要添加脚本的 cron
-my_cron_list_add=(
-"0 0-23/1 * * * jd jd_super_redrain"
-"30 20-23/1 * * * jd jd_half_redrain"
-"45 22 * * * jd jd_unsubscribe_2"
-"15 8 9-31 5 * jd jd_adolf_ETIP"
-)
+my_cron_list_add="
+0 0-23/1 * * * jd jd_super_redrain
+30 20-23/1 * * * jd jd_half_redrain
+45 22 * * * jd jd_unsubscribe_2
+15 8 9-31 5 * jd jd_adolf_ETIP"
 
 
 #添加需要删除的脚本的 name
@@ -43,7 +42,7 @@ for npc_scripts in $my_scripts_list_add
 
     do 
 
-         sc_result=$(cat /jd/config/crontab.list | grep "${npc_scripts}")
+         eval sc_result=$(cat /jd/config/crontab.list | grep "${npc_scripts}")
 
             if [[ "$sc_result" != "" ]];then
                 echo -e "${npc_scripts} 脚本计划任务已存在，无需更新～ \n"
@@ -52,9 +51,9 @@ for npc_scripts in $my_scripts_list_add
 
                 #遍历 my_cron_list 添加对应脚本的 cron 
 
-                for npc_cron in ${my_cron_list_add[@]}
+                for npc_cron in $my_cron_list_add
                 do
-                     cr_result=$(echo $npc_cron | grep "${npc_scripts}")
+                     eval cr_result=$(echo $npc_cron | grep "${npc_scripts}")
                         if [[ "$cr_result" != "" ]];then
                             echo -e "${npc_scripts} 脚本计划任务正在添加～ \n"
                             echo "$npc_cron" >> /jd/config/crontab.list
