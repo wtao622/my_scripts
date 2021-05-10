@@ -47,7 +47,7 @@ for npc_scripts in $my_scripts_list_add
                 echo -e "${npc_scripts} 脚本计划任务已存在，无需更新～ \n"
             else
                 echo -e "${npc_scripts} 脚本计划任务不存在，准备更新～ \n"
-                npc_cron=`eval echo '$'"${npc_scripts}"`
+                eval npc_cron=\${${npc_scripts}}
                 echo "$npc_cron" >> /jd/config/crontab.list
                 crontab /jd/config/crontab.list
                 echo -e "${npc_scripts} 脚本添加完成～ \n"
