@@ -6,7 +6,7 @@
 #以下脚本主要适用 jd docker v3 & v4  , jd_ql 暂时无法使用
 #下载后请放于  /jd/config/ 目录下
 #赋予脚本执行权限 chmod +x /jd/config/lpss_diy.sh
-#建议手动添加以下计划任务 */10 * * * * bash /jd/config/lpss_diy.sh >/dev/null 2>&1
+#建议手动添加以下计划任务 */10 * * * * bash /jd/config/lpss_diy.sh >> /jd/log/lpss_diy.log 2>&1
 
 # 下载需要添加的脚本 link 
 
@@ -28,7 +28,7 @@ jd_adolf_ETIP
 "
 
 #添加需要添加脚本的 cron
-lpss_diy="*/10 * * * * bash /jd/config/lpss_diy.sh >/dev/null 2>&1"
+lpss_diy="*/10 * * * * bash /jd/config/lpss_diy.sh >> /jd/log/lpss_diy.log 2>&1"
 jd_super_redrain="0 0-23/1 * * * jd jd_super_redrain"
 jd_half_redrain="30 20-23/1 * * * jd jd_half_redrain"
 jd_unsubscribe_2="45 22 * * * jd jd_unsubscribe_2"
