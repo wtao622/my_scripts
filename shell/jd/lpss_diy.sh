@@ -39,7 +39,7 @@ for npc_scripts in my_scripts_list
 
     do 
 
-        eval sc_result = $(cat /jd/config/crontab.list | grep "${npc_scripts}")
+        eval sc_result=$(cat /jd/config/crontab.list | grep "${npc_scripts}")
 
             if [[ "$sc_result" != "" ]];then
                 echo -e "$scripts 脚本计划任务已存在，无需更新～ \n"
@@ -50,7 +50,7 @@ for npc_scripts in my_scripts_list
 
                 for npc_cron in my_cron_list
                 do
-                    eval cr_result = $(echo $npc_cron | grep "${npc_scripts}")
+                    eval cr_result=$(echo $npc_cron | grep "${npc_scripts}")
                         if [[ "$cr_result" != "" ]];then
                             echo -e "$scripts 脚本计划任务正在添加～ \n"
                             echo "$npc_cron" >> /jd/config/crontab.list
