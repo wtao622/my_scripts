@@ -168,3 +168,21 @@ do
   done
   index=$[$index+1]
 done
+
+
+
+    for npc_scripts in $my_scripts_list_del
+
+        do 
+
+            dl_result=$(cat /jd/config/crontab.list | grep "${npc_scripts}")
+
+            if [[ "$dl_result" != "" ]];then
+                echo -e "准备删除 ${npc_scripts} 计划任务～ \n"
+                grep -v "$npc_scripts" /jd/config/crontab.list > /jd/config/crontab.list
+                crontab /jd/config/crontab.list
+                echo -e " ${npc_scripts} 脚本计划任务删除完成～ \n"
+            else
+                echo -e "crontab.list 文件中无该计划任务，无需删除～ \n"
+            fi
+        done
