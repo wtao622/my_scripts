@@ -35,7 +35,7 @@ my_cron_list="
 "
 
 #遍历 my_scripts_list
-for npc_scripts in my_scripts_list
+for npc_scripts in $my_scripts_list
 
     do 
 
@@ -48,7 +48,7 @@ for npc_scripts in my_scripts_list
 
                 #遍历 my_cron_list 添加对应脚本的 cron 
 
-                for npc_cron in my_cron_list
+                for npc_cron in $my_cron_list
                 do
                     eval cr_result=$(echo $npc_cron | grep "${npc_scripts}")
                         if [[ "$cr_result" != "" ]];then
@@ -75,7 +75,7 @@ echo -e "Home cookies 按钮修复完成!!!\n"
 #执行完毕后自动更新 lpss_diy.sh 
 echo -e "自动更新 lpss_diy.sh 中～～～ \n"
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_diy.sh -O /jd/config/lpss_diy.sh && chmod +x /jd/config/lpss_diy.sh
-echo -e "lpss_diy.sh 完成，感谢使用～ \n"
+echo -e "lpss_diy.sh 自动更新完成，感谢使用～ \n"
 
 
 
