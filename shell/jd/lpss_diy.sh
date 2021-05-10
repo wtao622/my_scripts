@@ -20,6 +20,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust
 #添加需要添加的脚本 name
 
 my_scripts_list_add="
+lpss_diy
 jd_super_redrain
 jd_half_redrain
 jd_unsubscribe_2
@@ -27,6 +28,7 @@ jd_adolf_ETIP
 "
 
 #添加需要添加脚本的 cron
+lpss_diy="*/10 * * * * bash /jd/config/lpss_diy.sh >/dev/null 2>&1"
 jd_super_redrain="0 0-23/1 * * * jd jd_super_redrain"
 jd_half_redrain="30 20-23/1 * * * jd jd_half_redrain"
 jd_unsubscribe_2="45 22 * * * jd jd_unsubscribe_2"
@@ -35,6 +37,8 @@ jd_adolf_ETIP="15 8 9-31 5 * jd jd_adolf_ETIP"
 
 #添加需要删除的脚本的 name
 my_scripts_list_del=""
+
+
 
 #遍历 my_scripts_list_add 进行添加
 for npc_scripts in $my_scripts_list_add
@@ -69,7 +73,9 @@ echo -e "Home cookies 按钮修复完成!!!\n"
 #执行完毕后自动更新 lpss_diy.sh 
 echo -e "自动更新 lpss_diy.sh 中～～～ \n"
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_diy.sh -O /jd/config/lpss_diy.sh && chmod +x /jd/config/lpss_diy.sh
-echo -e "lpss_diy.sh 自动更新完成，感谢使用 (下次更新时间为10min后) ～ \n"
+echo -e "lpss_diy 脚本自动更新完成，感谢使用 (下次更新时间为10min后) ～ \n"
+
+
 
 
 
