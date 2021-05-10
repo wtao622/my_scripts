@@ -49,9 +49,12 @@ var tg_arr , tg_arr_len , j ,k ;
 // =======================================钉钉机器人通知设置区域===========================================
 //此处填你钉钉 bot 的webhook，例如：5a544165465465645d0f31dca676e7bd07415asdasd
 //(环境变量名 DD_BOT_TOKEN)
-let DD_BOT_TOKEN = 'f23056f69ebf6ceb1310ebbfd43cedc32a503895778a042957668508be92ef61';
+let DD_BOT_TOKEN = '42d3e9e2be65c569dd567677e3c713c20708c2a318d97c2aeefb9cac930b9b0e';
 //密钥，机器人安全设置页面，加签一栏下面显示的SEC开头的字符串
-let DD_BOT_SECRET = 'SEC8dcc1434290e5512e4e276c2afc4b10bf579373e4177c7710e8f0d4732878629';
+let DD_BOT_SECRET = 'SEC418fc1d3837e7112858e692559f2f8295f75ebc8b7631418e047f68198e37487';
+
+//https://oapi.dingtalk.com/robot/send?access_token=2aa3905105945014232258ee50f35604e0e8e7f5687092f6a3509a6c9a795f29
+
 
 // =======================================企业微信机器人通知设置区域===========================================
 //此处填你企业微信机器人的 webhook(详见文档 https://work.weixin.qq.com/api/doc/90000/90136/91770)，例如：693a91f6-7xxx-4bc4-97a0-0ec2sifa5aaa
