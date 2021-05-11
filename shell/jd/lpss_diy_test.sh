@@ -64,8 +64,8 @@ for npc_scripts in $my_scripts_list_add
                     echo -e "${npc_scripts} 新旧计划任务相同，无需更新～ \n"
                 else
                     echo -e "正在更新 ${npc_scripts} 脚本计划任务 ～ \n"
-                    sed -i "$line_id d" $my_cron_file
-                    sed -i "N$line_id i $new_cron" $my_cron_file
+                    sed -i "${line_id} d" ${my_cron_file}
+                    sed -i "${line_id} i ${new_cron}" $my_cron_file
                     crontab /jd/config/crontab.list
                     echo -e " ${npc_scripts} 脚本计划任务更新完成 ～ \n"
                 
@@ -93,7 +93,7 @@ echo -e "Home cookies 按钮修复完成!!!\n"
 
 #执行完毕后自动更新 lpss_diy.sh 
 echo -e "自动更新 lpss_diy 中～～～ \n"
-wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_diy.sh -O /jd/config/lpss_diy.sh && chmod +x /jd/config/lpss_diy.sh
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_diy_test.sh -O /jd/config/lpss_diy_test.sh && chmod +x /jd/config/lpss_diy_test.sh
 echo -e "lpss_diy 脚本自动更新完成，感谢使用 (下次更新时间为10min后) ～ \n"
 
 
