@@ -60,14 +60,14 @@ for npc_scripts in $my_scripts_list_add
                 eval new_cron=\${${npc_scripts}}
                 
                 #判断是否需要更新计划任务
-                if[ "$old_cron" = "$new_cron" ];then       
-                echo -e "${npc_scripts} 新旧计划任务相同，无需更新～ \n"
+                if [ "$old_cron" = "$new_cron" ];then       
+                    echo -e "${npc_scripts} 新旧计划任务相同，无需更新～ \n"
                 else
-                echo -e "正在更新 ${npc_scripts} 脚本计划任务 ～ \n"
-                sed -i "$line_id d" $my_cron_file
-                sed -i "$line_id i$new_cron" $my_cron_file
-                crontab /jd/config/crontab.list
-                echo -e " ${npc_scripts} 脚本计划任务更新完成 ～ \n"
+                    echo -e "正在更新 ${npc_scripts} 脚本计划任务 ～ \n"
+                    sed -i "$line_id d" $my_cron_file
+                    sed -i "$line_id i$new_cron" $my_cron_file
+                    crontab /jd/config/crontab.list
+                    echo -e " ${npc_scripts} 脚本计划任务更新完成 ～ \n"
                 
                 fi
             else
