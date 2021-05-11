@@ -19,6 +19,8 @@ wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdreso
 
 #添加需要添加的脚本 name
 
+my_cron_file="/jd/config/crontab.list"
+
 my_scripts_list_add="
 lpss_diy
 jd_super_redrain
@@ -50,7 +52,24 @@ for npc_scripts in $my_scripts_list_add
           sc_result=$(cat /jd/config/crontab.list | grep "${npc_scripts}")
 
             if [[ "$sc_result" != "" ]];then
-                echo -e "${npc_scripts} 脚本计划任务已存在，无需更新～ \n"
+                echo -e "${npc_scripts} 脚本计划任务已存在，检查是否需要更新计划任务～ \n"
+                
+                #取行号
+                line_id=`sed -n '/$npc_scripts/=' $my_cron_file`
+                old_cron=cat $my_cron_file | grep "$npc_scripts"
+                eval new_cron=\${${npc_scripts}}
+                
+                #判断是否需要更新计划任务
+                if[ "$old_cron" = "$new_cron" ];then       
+                echo -e "${npc_scripts} 新旧计划任务相同，无需更新～ \n"
+                else
+                echo -e "正在更新 ${npc_scripts} 脚本计划任务 ～ \n"
+                sed -i "$line_id d" $my_cron_file
+                sed -i "$line_id i$new_cron" $my_cron_file
+                crontab /jd/config/crontab.list
+                echo -e " ${npc_scripts} 脚本计划任务更新完成 ～ \n"
+                
+                fi
             else
                 echo -e "${npc_scripts} 脚本计划任务不存在，准备更新～ \n"
                 eval npc_cron=\${${npc_scripts}}
