@@ -17,10 +17,10 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_sc
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/car/adolf_ETIP.js -O /jd/scripts/jd_adolf_ETIP.js
 wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdresource/jd_syj.js -O /jd/scripts/jd_syj.js 
 
-#添加需要添加的脚本 name
 
 my_cron_file="/jd/config/crontab.list"
 
+#添加需要添加的脚本 name
 my_scripts_list_add="
 lpss_diy
 jd_super_redrain
@@ -56,7 +56,7 @@ for npc_scripts in $my_scripts_list_add
                 
                 #取行号
                 line_id=`sed -n '/$npc_scripts/=' $my_cron_file`
-                old_cron=cat $my_cron_file | grep "$npc_scripts"
+                eval old_cron=`cat $my_cron_file | grep "$npc_scripts"`
                 eval new_cron=\${${npc_scripts}}
                 
                 #判断是否需要更新计划任务
