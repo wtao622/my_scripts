@@ -58,11 +58,11 @@ for npc_scripts in $my_scripts_list_add
                 
                 #取行号
                 line_id=`sed -n "/${npc_scripts}/=" ${my_cron_file}`
-                echo $line_id
+                echo “$line_id”
                 old_cron=`cat $my_cron_file | grep "$npc_scripts"`
-                echo $old_cron
+                echo “$old_cron”
                 eval new_cron=\${${npc_scripts}}
-                echo $new_cron
+                echo “$new_cron”
                 
                 #判断是否需要更新计划任务
                 if [ "$old_cron" = "$new_cron" ];then       
