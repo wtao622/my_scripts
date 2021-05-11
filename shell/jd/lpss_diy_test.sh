@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 脚本作者 ：  lpssxs
-# 更新时间 ：  2021/5/10 
+# 更新时间 ：  2021/5/11 
 
 #以下脚本主要适用 jd docker v3 & v4  , jd_ql 暂时无法使用
 #下载后请放于  /jd/config/ 目录下
@@ -17,6 +17,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_sc
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_half_redrain.js -O /jd/scripts/jd_half_redrain.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/car/adolf_ETIP.js -O /jd/scripts/jd_adolf_ETIP.js
 wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdresource/jd_syj.js -O /jd/scripts/jd_syj.js 
+wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js  -O /jd/scripts/jd_npc_redrain.js 
 
 
 my_cron_file="/jd/config/crontab.list"
@@ -30,6 +31,7 @@ jd_half_redrain
 jd_unsubscribe_2
 jd_adolf_ETIP
 jd_syj
+jd_npc_redrain
 "
 
 #添加需要添加脚本的 cron
@@ -39,6 +41,7 @@ jd_half_redrain="30 20-23/1 * * * jd jd_half_redrain"
 jd_unsubscribe_2="45 22 * * * jd jd_unsubscribe_2"
 jd_adolf_ETIP="15 8 9-31 5 * jd jd_adolf_ETIP"
 jd_syj="10 0,7,23 * * * jd jd_syj"
+jd_npc_redrain="0 0-23/1 * * * jd jd_npc_redrain"
 
 
 #添加需要删除的脚本的 name
