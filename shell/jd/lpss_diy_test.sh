@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 脚本作者 ：  lpssxs
-# 更新时间 ：  2021/5/11 
+# 更新时间 ：  2021/5/12
 
 #以下脚本主要适用 jd docker v3 & v4  , jd_ql 暂时无法使用
 #下载后请放于  /jd/config/ 目录下
@@ -56,6 +56,30 @@ jd_syj_2
 
 #awk '{print $NF}' filename
 
+
+
+#遍历 my_scripts_list_del 进行删除~
+
+for my_del_scripts in $my_scripts_list_del
+
+    do
+
+      del_result=`cat ${my_cron_file} | grep "${my_del_scripts}"`
+
+        if [[ "$del_result" != "" ]];then
+
+        echo -e "计划删除脚本 ${my_del_scripts} 存在，现在进行删除该脚本计划任务～ \n"
+        line_id=`sed -n "/${my_del_scripts}/=" ${my_cron_file}`
+        sed -i "${line_id} d" ${my_cron_file}
+        crontab /jd/config/crontab.list
+        echo -e "${my_del_scripts} 脚本计划任务已删除，请刷新查看～ \n"
+        else
+        echo -e "无需删除脚本的计划任务～ \n"
+        fi
+
+    done
+
+
 #遍历 my_scripts_list_add 进行添加
 for npc_scripts in $my_scripts_list_add
 
@@ -92,26 +116,6 @@ for npc_scripts in $my_scripts_list_add
             fi
     done
 
-#遍历 my_scripts_list_del 进行删除~
-
-for my_del_scripts in $my_scripts_list_del
-
-    do
-
-      del_result=`cat ${my_cron_file} | grep "${my_del_scripts}"`
-
-        if [[ "$del_result" != "" ]];then
-
-        echo -e "计划删除脚本 ${my_del_scripts} 存在，现在进行删除该脚本计划任务～ \n"
-        line_id=`sed -n "/${my_del_scripts}/=" ${my_cron_file}`
-        sed -i "${line_id} d" ${my_cron_file}
-        crontab /jd/config/crontab.list
-        echo -e "${my_del_scripts} 脚本计划任务已删除，请刷新查看～ \n"
-        else
-        echo -e "无需删除脚本的计划任务～ \n"
-        fi
-
-    done
 
 
 
