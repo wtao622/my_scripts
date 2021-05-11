@@ -57,7 +57,7 @@ for npc_scripts in $my_scripts_list_add
                 echo -e "${npc_scripts} 脚本计划任务已存在，检查是否需要更新计划任务～ \n"
                 
                 #取行号
-                line_id=`sed -n '/$npc_scripts/=' $my_cron_file`
+                line_id=`sed -n "/${npc_scripts}/=" ${my_cron_file}`
                 echo $line_id
                 old_cron=`cat $my_cron_file | grep "$npc_scripts"`
                 echo $old_cron
