@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 脚本作者 ：  lpssxs
-# 更新时间 ：  2021/5/10 
+# 更新时间 ：  2021/5/11 
 
 #以下脚本主要适用 jd docker v3 & v4  , jd_ql 暂时无法使用
 #下载后请放于  /jd/config/ 目录下
@@ -10,17 +10,20 @@
 
 # 下载需要添加的脚本 link 
 
-#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify_5.js -O /jd/sendNotify.js 
+#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/html/home.html  -O /jd/home.html
+#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify_7.js -O /jd/sendNotify.js 
 wget -q --no-check-certificate  https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd_unsubscribe_2.js -O /jd/scripts/jd_unsubscribe_2.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_super_redrain.js -O /jd/scripts/jd_super_redrain.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_half_redrain.js -O /jd/scripts/jd_half_redrain.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/car/adolf_ETIP.js -O /jd/scripts/jd_adolf_ETIP.js
 wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdresource/jd_syj.js -O /jd/scripts/jd_syj_2.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js  -O /jd/scripts/jd_super_redrain_2.js 
-#添加需要添加的脚本 name
+
 
 my_cron_file="/jd/config/crontab.list"
 
+
+#添加需要添加的脚本 name
 my_scripts_list_add="
 lpss_diy
 jd_super_redrain
@@ -64,7 +67,7 @@ for npc_scripts in $my_scripts_list_add
             fi
     done
 
-    #遍历 my_scripts_list_del 进行删除~
+#遍历 my_scripts_list_del 进行删除~
 
 
 
@@ -79,7 +82,7 @@ echo -e "Home cookies 按钮修复完成!!!\n"
 #执行完毕后自动更新 lpss_diy.sh 
 echo -e "自动更新 lpss_diy 中～～～ \n"
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_diy.sh -O /jd/config/lpss_diy.sh && chmod +x /jd/config/lpss_diy.sh
-echo -e "lpss_diy 脚本自动更新完成，感谢使用 (下次更新时间为10min后) ～ \n"
+echo -e "lpss_diy 脚本自动更新完成，感谢使用 (下次同步时间为10min后) ～ \n"
 
 
 
