@@ -8,6 +8,7 @@
 #赋予脚本执行权限 chmod +x /jd/config/lpss_diy.sh
 #建议手动添加以下计划任务 */10 * * * * bash /jd/config/lpss_diy.sh >> /jd/log/lpss_diy.log 2>&1
 
+
 # 下载需要添加的脚本 link 
 
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify_5.js -O /jd/sendNotify.js 
@@ -19,6 +20,7 @@ wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdreso
 
 
 my_cron_file="/jd/config/crontab.list"
+chmod 666 $my_cron_file
 
 #添加需要添加的脚本 name
 my_scripts_list_add="
@@ -56,8 +58,11 @@ for npc_scripts in $my_scripts_list_add
                 
                 #取行号
                 line_id=`sed -n '/$npc_scripts/=' $my_cron_file`
-                eval old_cron=`cat $my_cron_file | grep "$npc_scripts"`
+                echo $line_id
+                old_cron=`cat $my_cron_file | grep "$npc_scripts"`
+                echo $old_cron
                 eval new_cron=\${${npc_scripts}}
+                echo $new_cron
                 
                 #判断是否需要更新计划任务
                 if [ "$old_cron" = "$new_cron" ];then       
