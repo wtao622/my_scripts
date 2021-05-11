@@ -65,7 +65,7 @@ for npc_scripts in $my_scripts_list_add
                 else
                     echo -e "正在更新 ${npc_scripts} 脚本计划任务 ～ \n"
                     sed -i "$line_id d" $my_cron_file
-                    sed -i "$line_id i$new_cron" $my_cron_file
+                    sed -i "N$line_id i $new_cron" $my_cron_file
                     crontab /jd/config/crontab.list
                     echo -e " ${npc_scripts} 脚本计划任务更新完成 ～ \n"
                 
