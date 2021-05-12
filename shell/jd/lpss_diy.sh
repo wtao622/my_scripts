@@ -21,7 +21,7 @@ wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdreso
 wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js  -O /jd/scripts/jd_npc_redrain.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_daily_lottery.js -O /jd/scripts/jd_daily_lottery.js 
 
-
+#赋予脚本修改权限
 my_cron_file="/jd/config/crontab.list"
 chmod 666 $my_cron_file
 

@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
 # 脚本作者 ：  lpssxs
-# 更新时间 ：  2021/5/12
+# 更新时间 ：  2021/5/13
+
+#更新日至:
+# - 5/11 : 完成自动添加脚本和计划任务
+# - 5/12 : 增加自动删除失效脚本功能
+# - 5/13 : 增加jd_try试用脚本模式 
 
 #以下脚本主要适用 jd docker v3 & v4  , jd_ql 暂时无法使用
 #下载后请放于  /jd/config/ 目录下
@@ -20,21 +25,17 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust
 wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdresource/jd_syj.js -O /jd/scripts/jd_syj.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js  -O /jd/scripts/jd_npc_redrain.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_daily_lottery.js -O /jd/scripts/jd_daily_lottery.js 
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_try.js -O /jd/scripts/jd_try.js 
 
-
+#赋予脚本修改权限
+my_sendNotify_path="/jd/scripts/sendNotify.js"
 my_cron_file="/jd/config/crontab.list"
 chmod 666 $my_cron_file
 
 #添加需要添加的脚本 name
 my_scripts_list_add="
 lpss_diy
-jd_super_redrain
-jd_half_redrain
-jd_unsubscribe_2
-jd_adolf_ETIP
-jd_syj
-jd_npc_redrain
-jd_daily_lottery
+jd_try
 "
 
 #添加需要添加脚本的 cron
@@ -46,6 +47,7 @@ jd_adolf_ETIP="15 8 9-31 5 * jd jd_adolf_ETIP"
 jd_syj="10 0,7,23 * * * jd jd_syj"
 jd_npc_redrain="0 0-23/1 * * * jd jd_npc_redrain"
 jd_daily_lottery="13 1,22,23 * * * jd jd_daily_lottery"
+jd_try="11 0 * * * jd jd_try"
 
 
 #添加需要删除的脚本的 name
@@ -55,6 +57,14 @@ jd_syj_2
 "
 
 #awk '{print $NF}' filename
+
+#多个JD项目区分flag
+
+my_jd_docker_name="JD-FLC"
+echo "目标容器 flag 是 ：$now_jd_docker_name"
+
+now_jd_docker_name=`cat ${my_sendNotify_path} | grep "${my_jd_docker_name}"`
+echo "当前容器 flag 是 ：$now_jd_docker_name"
 
 
 
