@@ -27,7 +27,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/long
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_daily_lottery.js -O /jd/scripts/jd_daily_lottery.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_try.js -O /jd/scripts/jd_try.js 
 
-wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/jd_try.sh -O /jd/config/jd_ck.sh
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/jd_try.sh -O /jd/config/jd_ck.sh && chmod +x /jd/config/jd_ck.sh
 
 #赋予脚本修改权限
 my_sendNotify_path="/jd/scripts/sendNotify.js"
@@ -65,10 +65,10 @@ jd_syj_2
 #多个JD项目区分flag
 
 my_jd_docker_name="JD-FLC"
-echo "目标容器 flag 是 ：$my_jd_docker_name"
+#echo "目标容器 flag 是 ：$my_jd_docker_name"
 
 now_jd_docker_name=`cat ${my_sendNotify_path} | grep "${my_jd_docker_name}"`
-echo "当前容器 flag 是 ：$now_jd_docker_name"
+#echo "当前容器 flag 是 ：$now_jd_docker_name"
 
 rework_result=`echo ${now_jd_docker_name} | grep "${my_jd_docker_name}"`
 
