@@ -20,11 +20,10 @@ my_ck_list=`cat "$my_ck_file"`
 while read line || [[ -n ${line} ]]
 
 	do
-		  echo $line
+		  #echo $line
+		  sed -i "20i ${line}" $my_config_file
 		  
 	done < $my_ck_file
-
-#sed -i "20i ${my_ck_list}" $my_config_file
 
 
 echo "jd_try ck 更新成功"
