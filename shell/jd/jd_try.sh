@@ -25,7 +25,7 @@ while read line || [[ -n ${line} ]]
 
 		  sed -i "${line_id} i ${line}" $my_config_file
 		  
-		  line_id=${line_id}+1
+		  line_id=$(($line_id+1))
 		  
 		  echo $line_id
 		  
