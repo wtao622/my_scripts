@@ -19,7 +19,7 @@ echo "$line_id_e"
 
 #sed -i '/Cookie/d' $my_config_file
 
-sed -i "${line_id_s} , ${line_id_e} d" $my_config_file
+sed -i "${line_id_s},${line_id_e}d" $my_config_file
 
 
 line_id=20
