@@ -13,9 +13,9 @@ my_config_file="/jd/config/config.sh"
 
 
 line_id_s=`sed -n "/jd_try_list_start/=" ${my_config_file}`
-echo "$line_id_s"
+
 line_id_e=`sed -n "/jd_try_list_end/=" ${my_config_file}`
-echo "$line_id_e"
+
 
 #sed -i '/Cookie/d' $my_config_file
 
