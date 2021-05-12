@@ -17,11 +17,12 @@ sed -i '/Cookie/d' $my_config_file
 my_ck_list=`cat "$my_ck_file"`
 
 
-while read line
-do
-      echo $line
-	  
-done < $my_ck_file
+while read line || [[ -n ${line} ]]
+
+	do
+		  echo $line
+		  
+	done < $my_ck_file
 
 #sed -i "20i ${my_ck_list}" $my_config_file
 
