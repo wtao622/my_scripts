@@ -17,7 +17,7 @@ sed -i '/Cookie/d' $my_config_file
 my_ck_list=`cat "$my_ck_file"`
 
 
-while read line || [[ -n ${line} ]] < $my_ck_file
+cat $my_ck_file | while read line || [[ -n ${line} ]] 
 
 	do
 		  #echo $line
