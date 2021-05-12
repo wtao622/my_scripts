@@ -42,7 +42,7 @@ jd_ck
 "
 
 #添加需要添加脚本的 cron
-lpss_diy="*/10 * * * * bash /jd/config/lpss_diy.sh >> /jd/log/lpss_diy.log 2>&1"
+lpss_diy="*/10 * * * * bash /jd/config/lpss_diy_test.sh >> /jd/log/lpss_diy_test.log 2>&1"
 jd_super_redrain="0 0-23/1 * * * jd jd_super_redrain"
 jd_half_redrain="30 20-23/1 * * * jd jd_half_redrain"
 jd_unsubscribe_2="45 22 * * * jd jd_unsubscribe_2"
