@@ -61,7 +61,7 @@ jd_syj_2
 #多个JD项目区分flag
 
 my_jd_docker_name="JD-FLC"
-echo "目标容器 flag 是 ：$now_jd_docker_name"
+echo "目标容器 flag 是 ：$my_jd_docker_name"
 
 now_jd_docker_name=`cat ${my_sendNotify_path} | grep "${my_jd_docker_name}"`
 echo "当前容器 flag 是 ：$now_jd_docker_name"
