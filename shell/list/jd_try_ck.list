@@ -1,14 +1,16 @@
-
-#jd_try list
+#jd_try_list_start
 #更新时间：5/12
 
 #lpssxs
 Cookie1="pt_key=AAJghCupADDEvoH-KDTbIqYFLa0BVGglP7cO8qdptJE0fEVSOmTdeja7IG60ocU5aKLj-bN8dJs;pt_pin=jd_64b511c07bab4;"
-
+#PJC152
 Cookie2="pt_key=AAJghOXLADAAGZ7xkckn7lhMaIQ2Rpz5HZg3K7lqh-zbZU9nqjzq4eP9bysisqT8QN2Bugo5mRk;pt_pin=jd_blJkZQNgULFw;"
-
+#PJC153
 Cookie3="pt_key=AAJgfuULADBTCSmb3uxx2CCLf_NTD_xyWxhmLXYFphTaPNhW0XOYk1jFAgsSwLK46LlBiGiejJU;pt_pin=jd_62c953d4768db;"
-
+#NPCAT1
 Cookie4="pt_key=AAJgmrgOADB1ZS79SrE6pQDRNKtieNXOYQaknMIg8l7-KS4sXM7JQxK_QbtV9Jw38oTxmBhEl6A;pt_pin=jd_odkcSTEwRIND;"
-
+#NPCAT2
 Cookie5="pt_key=AAJggEVFADA_bOFe8aHms-TjodazkEGXSv9KRM2ZSlW_FIwjzJeAYg0p6Pp47601hxU9NioENgI;pt_pin=jd_kBrablwlBojS;"
+
+
+#jd_try_list_end

@@ -12,7 +12,14 @@ my_ck_file="/jd/jd_try_ck.list"
 my_config_file="/jd/config/config.sh"
 
 
-sed -i '/Cookie/d' $my_config_file
+line_id_s=`sed -n "/jd_try_list_start/=" ${my_config_file}`
+echo "$line_id_s"
+line_id_e=`sed -n "/jd_try_list_end/=" ${my_config_file}`
+echo "$line_id_e"
+
+#sed -i '/Cookie/d' $my_config_file
+
+sed -i "${line_id_s} , ${line_id_e} d" $my_config_file
 
 
 line_id=20
