@@ -66,6 +66,8 @@ echo "目标容器 flag 是 ：$my_jd_docker_name"
 now_jd_docker_name=`cat ${my_sendNotify_path} | grep "${my_jd_docker_name}"`
 echo "当前容器 flag 是 ：$now_jd_docker_name"
 
+rework_result=`echo ${now_jd_docker_name} | grep "${my_jd_docker_name}"`
+
 
 
 #遍历 my_scripts_list_del 进行删除~
