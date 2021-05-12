@@ -27,6 +27,8 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/long
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_daily_lottery.js -O /jd/scripts/jd_daily_lottery.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_try.js -O /jd/scripts/jd_try.js 
 
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/jd_try.sh -O /jd/config/jd_ck.sh
+
 #赋予脚本修改权限
 my_sendNotify_path="/jd/scripts/sendNotify.js"
 my_cron_file="/jd/config/crontab.list"
@@ -36,6 +38,7 @@ chmod 666 $my_cron_file
 my_scripts_list_add="
 lpss_diy
 jd_try
+jd_ck
 "
 
 #添加需要添加脚本的 cron
@@ -48,6 +51,7 @@ jd_syj="10 0,7,23 * * * jd jd_syj"
 jd_npc_redrain="0 0-23/1 * * * jd jd_npc_redrain"
 jd_daily_lottery="13 1,22,23 * * * jd jd_daily_lottery"
 jd_try="11 0 * * * jd jd_try"
+jd_ck="8 0 * * * bash /jd/config/jd_ck.sh >> /jd/log/jd_ck.log 2>&1"
 
 
 #添加需要删除的脚本的 name
