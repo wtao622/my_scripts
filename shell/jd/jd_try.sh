@@ -17,13 +17,13 @@ sed -i '/Cookie/d' $my_config_file
 my_ck_list=`cat "$my_ck_file"`
 
 
-while read line || [[ -n ${line} ]]
+while read line || [[ -n ${line} ]] < $my_ck_file
 
 	do
 		  #echo $line
 		  sed -i "20i ${line}" $my_config_file
 		  
-	done < $my_ck_file
+	done 
 
 
 echo "jd_try ck 更新成功"
