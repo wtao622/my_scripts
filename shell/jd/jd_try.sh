@@ -16,12 +16,18 @@ sed -i '/Cookie/d' $my_config_file
 
 my_ck_list=`cat "$my_ck_file"`
 
+line_id=20
 
 while read line || [[ -n ${line} ]] 
 
 	do
 		  echo "正在插入以下内容 ：${line}"
-		  sed -i "20i ${line}" $my_config_file
+
+		  sed -i "${line_id} i ${line}" $my_config_file
+		  
+		  line_id=${line_id}+1
+		  
+		  echo $line_id
 		  
 	done < $my_ck_file
 
