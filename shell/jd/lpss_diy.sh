@@ -36,7 +36,6 @@ jd_adolf_ETIP
 jd_syj
 jd_npc_redrain
 jd_daily_lottery
-lpss_key
 "
 
 #添加需要添加脚本的 cron
@@ -55,6 +54,7 @@ lpss_key="37 23 * * * bash /jd/config/lpss_key.sh >> /jd/log/lpss_key.log 2>&1"
 my_scripts_list_del="
 jd_super_redrain_2
 jd_syj_2
+lpss_key
 "
 
 #awk '{print $NF}' filename
