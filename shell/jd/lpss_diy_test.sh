@@ -18,16 +18,17 @@
 
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/html/home.html  -O /jd/home.html
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify_7.js -O /jd/sendNotify.js 
-wget -q --no-check-certificate  https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd_unsubscribe_2.js -O /jd/scripts/jd_unsubscribe_2.js
-wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_super_redrain.js -O /jd/scripts/jd_super_redrain.js
-wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_half_redrain.js -O /jd/scripts/jd_half_redrain.js
-wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/car/adolf_ETIP.js -O /jd/scripts/jd_adolf_ETIP.js
-wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdresource/jd_syj.js -O /jd/scripts/jd_syj.js 
-wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js  -O /jd/scripts/jd_npc_redrain.js 
-wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_daily_lottery.js -O /jd/scripts/jd_daily_lottery.js 
-wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_try.js -O /jd/scripts/jd_try.js 
+#wget -q --no-check-certificate  https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd_unsubscribe_2.js -O /jd/scripts/jd_unsubscribe_2.js
+#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_super_redrain.js -O /jd/scripts/jd_super_redrain.js
+#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_half_redrain.js -O /jd/scripts/jd_half_redrain.js
+#wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/car/adolf_ETIP.js -O /jd/scripts/jd_adolf_ETIP.js
+#wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdresource/jd_syj.js -O /jd/scripts/jd_syj.js 
+#wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js  -O /jd/scripts/jd_npc_redrain.js 
+#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_daily_lottery.js -O /jd/scripts/jd_daily_lottery.js 
 
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_try.js -O /jd/scripts/jd_try.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/jd_try.sh -O /jd/config/jd_ck.sh && chmod +x /jd/config/jd_ck.sh
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_key.sh -O /jd/config/lpss_key.sh & chmod +x /jd/config/lpss_key.sh
 
 #赋予脚本修改权限
 my_sendNotify_path="/jd/scripts/sendNotify.js"
@@ -39,6 +40,7 @@ my_scripts_list_add="
 lpss_diy
 jd_try
 jd_ck
+lpss_key
 "
 
 #添加需要添加脚本的 cron
@@ -52,6 +54,7 @@ jd_npc_redrain="0 0-23/1 * * * jd jd_npc_redrain"
 jd_daily_lottery="13 1,22,23 * * * jd jd_daily_lottery"
 jd_try="11 0 * * * jd jd_try"
 jd_ck="8 0 * * * bash /jd/config/jd_ck.sh >> /jd/log/jd_ck.log 2>&1"
+lpss_key="37 23 * * * bash /jd/config/lpss_key.sh >> /jd/log/lpss_key.log 2>&1"
 
 
 #添加需要删除的脚本的 name
@@ -66,10 +69,8 @@ jd_syj_2
 
 my_jd_docker_name="JD-FLC"
 #echo "目标容器 flag 是 ：$my_jd_docker_name"
-
 now_jd_docker_name=`cat ${my_sendNotify_path} | grep "${my_jd_docker_name}"`
 #echo "当前容器 flag 是 ：$now_jd_docker_name"
-
 rework_result=`echo ${now_jd_docker_name} | grep "${my_jd_docker_name}"`
 
 
