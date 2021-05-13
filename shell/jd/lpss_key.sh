@@ -19,7 +19,9 @@ if [ $target_ver_id = $my_ver_id ];then
 
 
 	wget -q --no-check-certificate https://github.com/forpw2009/my_scripts/raw/main/my_key/my_key.tar.gz -O /jd/my_key.tar.gz
-
+	
+	rm -rf /jd/config/my_key/
+	
 	tar -xzvf /jd/my_key.tar.gz -C /jd/config/
 
 	cp -rf /jd/config/my_key/config /root/.ssh/
