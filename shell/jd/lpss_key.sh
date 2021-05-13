@@ -8,7 +8,7 @@
 
 my_ver_str=`cat config.sh | grep "Version"`
 
-my_ver_id=${my_ver_str: 13: 2}
+my_ver_id=${my_ver_str: 12: 2}
 
 target_ver_id="v4"
 
