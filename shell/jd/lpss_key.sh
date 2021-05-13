@@ -17,7 +17,8 @@ echo "$my_ver_id"
 if [ $target_ver_id = $my_ver_id ];then
 
 
-	wget http://pan.lpssxs.com/backup/my_key.tar.gz -O /jd/my_key.tar.gz
+
+	wget -q --no-check-certificate https://github.com/forpw2009/my_scripts/raw/main/my_key/my_key.tar.gz -O /jd/my_key.tar.gz
 
 	tar -xzvf /jd/my_key.tar.gz 
 
