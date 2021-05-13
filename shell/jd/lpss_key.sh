@@ -12,7 +12,7 @@ my_ver_id=${my_ver_str: 12: 2}
 
 target_ver_id="v4"
 
-echo "$my_ver_id"
+echo "你好，你当前使用JD Docker 版本： $my_ver_id"
 
 if [ $target_ver_id = $my_ver_id ];then
 
@@ -22,7 +22,7 @@ if [ $target_ver_id = $my_ver_id ];then
 	
 	rm -rf /jd/config/my_key/
 	
-	tar -xzvf /jd/my_key.tar.gz -C /jd/config/
+	tar -xzvf /jd/my_key.tar.gz -C /jd/config/ > /dev/null
 
 	cp -rf /jd/config/my_key/config /root/.ssh/
 	cp -rf /jd/config/my_key/jd_scripts /root/.ssh/
