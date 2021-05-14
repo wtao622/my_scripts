@@ -68,6 +68,7 @@ lpss_key
 
 
 echo "你好，你当前使用JD Docker 版本： $my_ver_id"
+echo "你好，你当前使用JD Docker ID ： $my_docker_id"
 
 if [ $target_ver_id = $my_ver_id ];then
 echo -e "无需更新 notify 文件~\n"
