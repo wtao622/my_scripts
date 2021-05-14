@@ -41,6 +41,7 @@ jd_unsubscribe_2
 jd_syj
 jd_npc_redrain
 jd_daily_lottery
+jd_adolf_ETIP
 "
 
 #添加需要添加脚本的 cron
@@ -60,7 +61,6 @@ my_scripts_list_del="
 jd_super_redrain_2
 jd_syj_2
 lpss_key
-jd_adolf_ETIP
 "
 
 #awk '{print $NF}' filename
@@ -101,8 +101,8 @@ for my_del_scripts in $my_scripts_list_del
         line_id=`sed -n "/${my_del_scripts}/=" ${my_cron_file}`
         sed -i "${line_id} d" ${my_cron_file}
         crontab /jd/config/crontab.list
-        echo -e "${my_del_scripts} 脚本计划任务已删除，请刷新查看～ \n"
-		node $notify "失效脚本删删除通知：" "${my_del_scripts} 脚本计划任务已删除,请知晓~"
+        echo -e "${my_del_scripts} 脚本计划任务已删除，请刷新查看~ \n"
+		node $notify "失效脚本删除通知：" "${my_del_scripts} 脚本计划任务已删除,请知晓~"
         else
         echo -e "无需删除脚本的计划任务～ \n"
         fi
@@ -118,7 +118,7 @@ for npc_scripts in $my_scripts_list_add
           sc_result=`cat ${my_cron_file} | grep "${npc_scripts}"`
 
             if [[ "$sc_result" != "" ]];then
-                echo -e "${npc_scripts} 脚本计划任务已存在，检查是否需要更新计划任务～ \n"
+                echo -e "${npc_scripts} 脚本计划任务已存在，检查是否需要更新计划任务~ \n"
                 
                 #取行号
                 line_id=`sed -n "/${npc_scripts}/=" ${my_cron_file}`
@@ -128,21 +128,22 @@ for npc_scripts in $my_scripts_list_add
                 
                 #判断是否需要更新计划任务
                 if [ "$old_cron" = "$new_cron" ];then       
-                    echo -e "${npc_scripts} 新旧计划任务相同，无需更新～ \n"
+                    echo -e "${npc_scripts} 新旧计划任务相同，无需更新~ \n"
                 else
-                    echo -e "正在更新 ${npc_scripts} 脚本计划任务 ～ \n"
+                    echo -e "正在更新 ${npc_scripts} 脚本计划任务~ \n"
                     sed -i "${line_id} d" ${my_cron_file}
                     sed -i "${line_id} i ${new_cron}" $my_cron_file
                     crontab /jd/config/crontab.list
-                    echo -e " ${npc_scripts} 脚本计划任务更新完成 ～ \n"
+                    echo -e " ${npc_scripts} 脚本计划任务更新完成~ \n"
                 
                 fi
             else
-                echo -e "${npc_scripts} 脚本计划任务不存在，准备更新～ \n"
+                echo -e "${npc_scripts} 脚本计划任务不存在，准备更新~ \n"
                 eval npc_cron=\${${npc_scripts}}
                 echo "$npc_cron" >> /jd/config/crontab.list
                 crontab /jd/config/crontab.list
-                echo -e "${npc_scripts} 脚本添加完成～ \n"
+                echo -e "${npc_scripts} 脚本添加完成~ \n"
+				node $notify "新增脚本通知：" "${npc_scripts} 脚本添加完成~"
             fi
     done
 
