@@ -20,7 +20,6 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_sc
 wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdresource/jd_syj.js -O /jd/scripts/jd_syj.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js  -O /jd/scripts/jd_npc_redrain.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_daily_lottery.js -O /jd/scripts/jd_daily_lottery.js
-wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_key.sh -O /jd/config/lpss_key.sh & chmod +x /jd/config/lpss_key.sh
 
 #定义变量参数和相关路径
 my_cron_file="/jd/config/crontab.list"
