@@ -36,6 +36,7 @@ target_ver_id="v4"
 chmod 666 $my_cron_file
 chmod 666 /jd/sendNotify.js 
 
+
 #添加需要添加的脚本 name
 my_scripts_list_add="
 lpss_diy
@@ -71,7 +72,8 @@ lpss_key
 
 echo "你好，你当前使用JD Docker 版本： $my_ver_id"
 echo "你好，你当前使用JD Docker ID ： $my_docker_id"
-sed -i "s/JD-FLC/${my_docker_id}/g" ${my_notify}
+sed -i "s/JD-FLC/$my_docker_id/g" $my_notify
+
 
 if [ $target_ver_id = $my_ver_id ];then
 echo -e "无需更新 notify 文件~\n"
