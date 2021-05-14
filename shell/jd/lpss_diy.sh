@@ -12,7 +12,7 @@
 # 下载需要添加的脚本 link 
 
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/html/home.html  -O /jd/home.html
-#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify_7.js -O /jd/sendNotify.js 
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify_7.js -O /jd/sendNotify.js 
 wget -q --no-check-certificate  https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd_unsubscribe_2.js -O /jd/scripts/jd_unsubscribe_2.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_super_redrain.js -O /jd/scripts/jd_super_redrain.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_half_redrain.js -O /jd/scripts/jd_half_redrain.js
@@ -26,11 +26,14 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_sc
 my_cron_file="/jd/config/crontab.list"
 notify="/jd/notify.js"
 my_ver_str=`cat config.sh | grep "Version"`
+my_docker_str=`cat config.sh | grep "NPCTL"`
 my_ver_id=${my_ver_str: 12: 2}
+my_docker_id=${my_docker_str: 10: 7}
 target_ver_id="v4"
 
 #赋予脚本修改权限
 chmod 666 $my_cron_file
+
 
 #添加需要添加的脚本 name
 my_scripts_list_add="
@@ -145,7 +148,7 @@ for npc_scripts in $my_scripts_list_add
 
 
 
-
+sed -i "s/JD-FLC/${my_docker_id}/g" /jd/sendNotify.js 
 cp -rf  /jd/sendNotify.js /jd/scripts
 echo -e "多用户推送脚本更新完成!!!\n"
 
