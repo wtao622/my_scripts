@@ -24,6 +24,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_sc
 
 #赋予脚本修改权限
 my_cron_file="/jd/config/crontab.list"
+notify="/jd/notify.js"
 chmod 666 $my_cron_file
 
 #添加需要添加的脚本 name
@@ -32,7 +33,6 @@ lpss_diy
 jd_super_redrain
 jd_half_redrain
 jd_unsubscribe_2
-jd_adolf_ETIP
 jd_syj
 jd_npc_redrain
 jd_daily_lottery
@@ -55,6 +55,7 @@ my_scripts_list_del="
 jd_super_redrain_2
 jd_syj_2
 lpss_key
+jd_adolf_ETIP
 "
 
 #awk '{print $NF}' filename
@@ -76,6 +77,7 @@ for my_del_scripts in $my_scripts_list_del
         sed -i "${line_id} d" ${my_cron_file}
         crontab /jd/config/crontab.list
         echo -e "${my_del_scripts} 脚本计划任务已删除，请刷新查看～ \n"
+		node $notify "失效脚本删删除通知：" "${my_del_scripts} 脚本计划任务已删除,请知晓~"
         else
         echo -e "无需删除脚本的计划任务～ \n"
         fi
