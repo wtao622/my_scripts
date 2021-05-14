@@ -22,9 +22,14 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/long
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_daily_lottery.js -O /jd/scripts/jd_daily_lottery.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_key.sh -O /jd/config/lpss_key.sh & chmod +x /jd/config/lpss_key.sh
 
-#赋予脚本修改权限
+#定义变量参数和相关路径
 my_cron_file="/jd/config/crontab.list"
 notify="/jd/notify.js"
+my_ver_str=`cat config.sh | grep "Version"`
+my_ver_id=${my_ver_str: 12: 2}
+target_ver_id="v4"
+
+#赋予脚本修改权限
 chmod 666 $my_cron_file
 
 #添加需要添加的脚本 name
@@ -59,6 +64,26 @@ jd_adolf_ETIP
 "
 
 #awk '{print $NF}' filename
+
+
+
+
+echo "你好，你当前使用JD Docker 版本： $my_ver_id"
+
+if [ $target_ver_id = $my_ver_id ];then
+
+echo -e "无需更新 notify 文件~\n"
+
+else
+
+echo -e "正在更新 notify 文件~\n"
+
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/notify.js -O /jd/notify.js
+
+fi
+
+
+
 
 
 
