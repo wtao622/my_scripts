@@ -77,7 +77,7 @@ for my_del_scripts in $my_scripts_list_del
         sed -i "${line_id} d" ${my_cron_file}
         crontab /jd/config/crontab.list
         echo -e "${my_del_scripts} 脚本计划任务已删除，请刷新查看～ \n"
-		node $notify "失效脚本删删除通知：" "${my_del_scripts} 脚本计划任务已删除,请知晓~"
+		#node $notify "失效脚本删删除通知：" "${my_del_scripts} 脚本计划任务已删除,请知晓~"
         else
         echo -e "无需删除脚本的计划任务～ \n"
         fi
