@@ -155,9 +155,9 @@ cp -rf  /jd/home.html /jd/panel/public
 echo -e "Home cookies 按钮修复完成!!!\n"
 
 #执行完毕后自动更新 lpss_diy.sh 
-echo -e "自动更新 lpss_diy 中~~~ \n"
+echo -e "自动更新lpss_diy中~\n"
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_diy.sh -O /jd/config/lpss_diy.sh && chmod +x /jd/config/lpss_diy.sh
-echo -e "lpss_diy 脚本自动更新完成，感谢使用 --- 下次同步时间为10min后"
+echo -e "lpss_diy脚本自动更新完成,感谢使用---下次同步时间为10min后"
 
 
 
