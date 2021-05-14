@@ -41,7 +41,6 @@ jd_unsubscribe_2
 jd_syj
 jd_npc_redrain
 jd_daily_lottery
-jd_adolf_ETIP
 "
 
 #添加需要添加脚本的 cron
@@ -61,6 +60,7 @@ my_scripts_list_del="
 jd_super_redrain_2
 jd_syj_2
 lpss_key
+jd_adolf_ETIP
 "
 
 #awk '{print $NF}' filename
