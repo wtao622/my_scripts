@@ -24,6 +24,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_sc
 #定义变量参数和相关路径
 my_cron_file="/jd/config/crontab.list"
 notify="/jd/notify.js"
+my_notify="/jd/sendNotify.js"
 my_ver_str=`cat config.sh | grep "Version"`
 my_docker_str=`cat config.sh | grep "NPCTL"`
 my_ver_id=${my_ver_str: 12: 2}
@@ -69,6 +70,7 @@ lpss_key
 
 echo "你好，你当前使用JD Docker 版本： $my_ver_id"
 echo "你好，你当前使用JD Docker ID ： $my_docker_id"
+sed -i "s/JD-FLC/${my_docker_id}/g" ${my_notify}
 
 if [ $target_ver_id = $my_ver_id ];then
 echo -e "无需更新 notify 文件~\n"
@@ -145,7 +147,7 @@ for npc_scripts in $my_scripts_list_add
 
 
 
-sed -i "s/JD-FLC/${my_docker_id}/g" /jd/sendNotify.js 
+
 cp -rf  /jd/sendNotify.js /jd/scripts
 echo -e "多用户推送脚本更新完成!!!\n"
 
