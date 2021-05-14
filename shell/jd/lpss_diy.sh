@@ -28,6 +28,7 @@ my_ver_str=`cat config.sh | grep "Version"`
 my_docker_str=`cat config.sh | grep "NPCTL"`
 my_ver_id=${my_ver_str: 12: 2}
 my_docker_id=${my_docker_str: 10: 7}
+echo "$my_docker_id"
 target_ver_id="v4"
 
 #赋予脚本修改权限
