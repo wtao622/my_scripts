@@ -32,8 +32,8 @@ let BARK_SOUND = '';
 let TG_BOT_TOKEN = '1465723424:AAHtll4rVcg7QcIbFu_wyWJ-AvzWi9w4ivE';
 //此处填你接收通知消息的telegram用户的id，例如：129xxx206
 //(环境变量名 TG_USER_ID)
-let TG_USER_ID = '';
-let TG_ID = '247076382&699267770';
+let TG_USER_ID = '247076382';
+let TG_ID = '';
 
 
 //请在config。sh文件中定义变量 TG_ID ，使用 “&” 进行分隔
@@ -188,14 +188,8 @@ async function sendNotify(text, desp, params = {}) {
   text = text.match(/.*?(?=\s?-)/g) ? text.match(/.*?(?=\s?-)/g)[0] : text;
 	qywxBotNotify(text, desp) //qywx
 	ddBotNotify(text, desp) //ddnotify
-	for (j = 0 ; j < tg_arr_len ; j++) {
-		
-      TG_USER_ID = tg_arr[j] ;
-	  setTimeout(function() {
-	  tgBotNotify(text, desp,TG_USER_ID);
-	  }, 3000);
-      
-    }
+	tgBotNotify(text, desp, TG_USER_ID) //tg
+
 }
 
 function serverNotify(text, desp, timeout = 2100) {
