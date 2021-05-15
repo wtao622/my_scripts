@@ -21,6 +21,7 @@ wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdreso
 wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js  -O /jd/scripts/jd_npc_redrain.js 
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_daily_lottery.js -O /jd/scripts/jd_daily_lottery.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_redPacket.js -O /jd/scripts/jd_redPacket.js
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_adolf_hf.js -O /jd/scripts/jd_adolf_hf.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_del_log.sh -O /jd/config/lpss_del_log.sh  && chmod +x /jd/config/lpss_del_log.sh
 
 #定义变量参数和相关路径
@@ -50,6 +51,7 @@ jd_npc_redrain
 jd_daily_lottery
 jd_monk_shop_lottery
 lpss_del_log
+jd_adolf_hf
 "
 
 #添加需要添加脚本的 cron
@@ -62,6 +64,7 @@ jd_monk_shop_lottery="3 0,10,23 * * * jd jd_monk_shop_lottery"
 jd_syj="10 0,7,23 * * * jd jd_syj"
 jd_npc_redrain="0 0-23/1 * * * jd jd_npc_redrain"
 jd_daily_lottery="13 1,22,23 * * * jd jd_daily_lottery"
+jd_adolf_hf="55 9 * * * jd jd_adolf_hf"
 
 
 
