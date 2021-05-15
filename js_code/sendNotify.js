@@ -189,8 +189,12 @@ async function sendNotify(text, desp, params = {}) {
 	qywxBotNotify(text, desp) //qywx
 	ddBotNotify(text, desp) //ddnotify
 	for (j = 0 ; j < tg_arr_len ; j++) {
+		
       TG_USER_ID = tg_arr[j] ;
-      tgBotNotify(text, desp,TG_USER_ID);
+	  setTimeout(function() {
+	  tgBotNotify(text, desp,TG_USER_ID);
+	  }, 3000);
+      
     }
 }
 
