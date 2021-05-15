@@ -12,7 +12,7 @@
 # 下载需要添加的脚本 link 
 
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/html/home.html  -O /jd/home.html
-wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify.js -O /jd/sendNotify.js 
+#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify.js -O /jd/sendNotify.js 
 #wget -q --no-check-certificate  https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd_unsubscribe_2.js -O /jd/scripts/jd_unsubscribe_2.js
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_super_redrain.js -O /jd/scripts/jd_super_redrain.js
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_half_redrain.js -O /jd/scripts/jd_half_redrain.js
@@ -152,7 +152,14 @@ for npc_scripts in $my_scripts_list_add
             fi
     done
 
+#关闭部分脚本帮助作者助力 - close_helpAuthor
+#关闭：jd_cfd , jd_cash , jd_bean_home , jd_jdzz 
+#关闭：jd_superMarket , jx_sign , jd_monk_shop_lottery 
 
+sed -i "s/let helpAuthor = true/let helpAuthor = false/g" /jd/scripts/*.js
+sed -i "s/const helpAuthor = true/const helpAuthor = false/g" /jd/scripts/*.js
+sed -i "s/const helpAu = true/const helpAu = false/g" /jd/scripts/*.js
+sed -i "s/let helpAu = true/let helpAu = false/g" /jd/scripts/*.js
 
 
 sed -i "s/JD-FLC/$my_docker_id/g" $my_notify
