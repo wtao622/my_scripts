@@ -186,15 +186,12 @@ async function sendNotify(text, desp, params = {}) {
   ])
   //由于上述两种微信通知需点击进去才能查看到详情，故text(标题内容)携带了账号序号以及昵称信息，方便不点击也可知道是哪个京东哪个活动
   text = text.match(/.*?(?=\s?-)/g) ? text.match(/.*?(?=\s?-)/g)[0] : text;
-
-    for (j = 0 ; j < tg_arr_len ; j++) {
-      TG_USER_ID = tg_arr[j] 
-      await Promise.all([
-        tgBotNotify(text, desp,TG_USER_ID)//telegram 机器人
-      ])
-    }
 	qywxBotNotify(text, desp) //qywx
 	ddBotNotify(text, desp) //ddnotify
+	for (j = 0 ; j < tg_arr_len ; j++) {
+      TG_USER_ID = tg_arr[j] ;
+      tgBotNotify(text, desp,TG_USER_ID);
+    }
 }
 
 function serverNotify(text, desp, timeout = 2100) {
@@ -340,6 +337,8 @@ function BarkNotify(text, desp, params={}) {
     }
   })
 }
+
+
 
 function tgBotNotify(text, desp, TG_USER_ID) {
   return  new Promise(resolve => {
