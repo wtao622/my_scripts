@@ -39,6 +39,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_sc
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_redPacket.js -O /jd/scripts/jd_redPacket.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/lpss_scripts/master/jd_market_lottery.js -O /jd/scripts/jd_market_lottery.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_pk.js -O /jd/scripts/jd_adolf_pk.js 
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/lpss_scripts/master/jd_unsubscribe.js -O /jd/scripts/jd_clear_shop.js
 
 
 #添加需要添加的脚本 name
@@ -46,7 +47,7 @@ my_scripts_list_add="
 lpss_diy
 jd_super_redrain
 jd_half_redrain
-jd_unsubscribe_2
+jd_clear_shop
 jd_syj
 jd_npc_redrain
 jd_daily_lottery
@@ -59,7 +60,7 @@ lpss_diy="*/10 * * * * bash /jd/config/lpss_diy.sh >> /jd/log/lpss_diy.log 2>&1"
 lpss_del_log="23 23 * * * bash /jd/config/lpss_del_log.sh >> /jd/log/lpss_del_log.log 2>&1"
 jd_super_redrain="0 0-23/1 * * * jd jd_super_redrain"
 jd_half_redrain="30 20-23/1 * * * jd jd_half_redrain"
-jd_unsubscribe_2="45 22 * * * jd jd_unsubscribe_2"
+jd_clear_shop="45 22 * * * jd jd_clear_shop"
 jd_monk_shop_lottery="1 0,10,23 * * * jd jd_monk_shop_lottery"
 jd_syj="10 0,7,23 * * * jd jd_syj"
 jd_npc_redrain="0 0-23/1 * * * jd jd_npc_redrain"
