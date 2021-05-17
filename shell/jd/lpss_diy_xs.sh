@@ -160,7 +160,7 @@ sed -i "s/let helpAuthor = true/let helpAuthor = false/g" /jd/scripts/*.js
 sed -i "s/const helpAuthor = true/const helpAuthor = false/g" /jd/scripts/*.js
 sed -i "s/const helpAu = true/const helpAu = false/g" /jd/scripts/*.js
 sed -i "s/let helpAu = true/let helpAu = false/g" /jd/scripts/*.js
-echo -e "关闭脚本：jd_cfd,jd_cash,jd_bean_home,jd_jdzz,jd_superMarket,jx_sign,jd_monk_shop_lottery 助力成功"
+echo -e "关闭脚本：jd_cfd,jd_cash,jd_bean_home,jd_jdzz,jd_superMarket,jx_sign,jd_monk_shop_lottery 助力成功~\n"
 
 
 sed -i "s/JD-FLC/$my_docker_id/g" $my_notify
