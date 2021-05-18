@@ -68,7 +68,7 @@ jd_syj="10 0,7,23 * * * jd jd_syj"
 jd_npc_redrain="0 0-23/1 * * * jd jd_npc_redrain"
 jd_daily_lottery="13 1,22,23 * * * jd jd_daily_lottery"
 jd_adolf_pk="15 8,13,18 17-31 5 * jd jd_adolf_pk"
-jd_friend="20 16 * * * jd jd_friend"
+jd_friend="40 16 * * * jd jd_friend"
 
 
 
