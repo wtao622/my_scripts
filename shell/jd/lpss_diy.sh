@@ -40,6 +40,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_sc
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/lpss_scripts/master/jd_market_lottery.js -O /jd/scripts/jd_market_lottery.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_pk.js -O /jd/scripts/jd_adolf_pk.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/lpss_scripts/master/jd_unsubscribe.js -O /jd/scripts/jd_clear_shop.js
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/lpss_scripts/master/jd_friend.js -O /jd/scripts/jd_friend.js
 
 
 #添加需要添加的脚本 name
@@ -53,6 +54,7 @@ jd_npc_redrain
 jd_daily_lottery
 jd_monk_shop_lottery
 jd_adolf_pk
+jd_friend
 "
 
 #添加需要添加脚本的 cron
@@ -66,6 +68,7 @@ jd_syj="10 0,7,23 * * * jd jd_syj"
 jd_npc_redrain="0 0-23/1 * * * jd jd_npc_redrain"
 jd_daily_lottery="13 1,22,23 * * * jd jd_daily_lottery"
 jd_adolf_pk="15 8,13,18 17-31 5 * jd jd_adolf_pk"
+jd_friend="20 16 * * * jd jd_friend"
 
 
 
