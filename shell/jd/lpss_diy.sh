@@ -26,9 +26,9 @@ target_ver_id="v4"
 chmod 666 $my_cron_file
 chmod 666 /jd/sendNotify.js
 
-echo "你好，你当前使用JD Docker 版本： $my_ver_id"
-echo "你好，你当前使用JD Docker ID ：  $my_docker_id"
-echo -e "你好，你当前Download Flag是 ： $my_download_flag \n"
+echo "你好，你当前使用JD Docker 版本：$my_ver_id"
+echo "你好，你当前使用JD Docker ID： $my_docker_id"
+echo -e "你好，你当前Download Flag是：$my_download_flag \n"
 
 if [ $target_ver_id = $my_ver_id ];then
 echo -e "无需更新 notify 文件~\n"
@@ -38,7 +38,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_sc
 fi
 
 
-if [ $my_download_flag = "true" ];then
+if [ $my_download_flag = "trues" ];then
 
 	echo -e "开始更新 home.html & sendNotify.js 文件\n"
 	wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/html/home.html  -O /jd/home.html
