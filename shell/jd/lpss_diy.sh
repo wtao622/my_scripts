@@ -65,6 +65,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/lpss_
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_mother_jump.js -O /jd/scripts/jd_z_mother_jump.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_flp.js -O /jd/scripts/jd_adolf_flp.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_oneplus.js -O /jd/scripts/jd_adolf_oneplus.js
+wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_martin.js -O /jd/scripts/jd_adolf_martin.js
 
 
 #添加需要添加的脚本 name
@@ -80,6 +81,7 @@ jd_monk_shop_lottery
 jd_adolf_pk
 jd_z_mother_jump
 jd_adolf_oneplus
+jd_adolf_martin
 "
 
 #添加需要添加脚本的 cron
@@ -97,6 +99,7 @@ jd_friend="40 16 * * * jd jd_friend"
 jd_z_mother_jump="5 8,14,20 19-25 5 * jd jd_z_mother_jump"
 jd_adolf_flp="15 9 * 5,6 * jd jd_adolf_flp"
 jd_adolf_oneplus="25 9 * 5,6 * jd jd_adolf_oneplus"
+jd_adolf_martin="20 9 20-31 5 * jd jd_adolf_martin"
 
 
 
