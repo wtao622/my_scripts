@@ -16,10 +16,10 @@ notify="/jd/notify.js"
 my_notify="/jd/sendNotify.js"
 my_ver_str=`cat ${my_config_file} | grep "Version"`
 my_docker_str=`cat ${my_config_file} | grep "NPCTL"`
-my_download_str=`cat ${my_config_file} | grep "DOWNCTL"`
+my_download_str=`cat ${my_config_file} | grep "DWCTL"`
 my_ver_id=${my_ver_str: 12: 2}
 my_docker_id=${my_docker_str: 10: 7}
-my_download_flag=${my_download_str: 10: 7}
+my_download_flag=${my_download_str: 10: 4}
 target_ver_id="v4"
 
 #赋予脚本修改权限
