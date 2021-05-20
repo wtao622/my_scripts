@@ -68,7 +68,6 @@ jd_daily_lottery
 jd_monk_shop_lottery
 jd_adolf_pk
 jd_z_mother_jump
-jd_adolf_flp
 jd_adolf_oneplus
 "
 
@@ -93,7 +92,7 @@ jd_adolf_oneplus="25 9 * 5,6 * jd jd_adolf_oneplus"
 
 #添加需要删除的脚本的 name
 my_scripts_list_del="
-jd_friend
+jd_adolf_flp
 "
 
 #awk '{print $NF}' filename
