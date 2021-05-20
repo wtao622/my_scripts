@@ -99,7 +99,7 @@ jd_friend="40 16 * * * jd jd_friend"
 jd_z_mother_jump="5 8,14,20 19-25 5 * jd jd_z_mother_jump"
 jd_adolf_flp="15 9 * 5,6 * jd jd_adolf_flp"
 jd_adolf_oneplus="25 9 * 5,6 * jd jd_adolf_oneplus"
-jd_adolf_martin="50 21 20-31 5 * jd jd_adolf_martin"
+jd_adolf_martin="19 9 20-31 5 * jd jd_adolf_martin"
 
 
 
