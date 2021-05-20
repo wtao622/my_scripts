@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# 脚本作者 ：  lpssxs
+# 脚本作者 ：  落魄书生
 # 更新时间 ：  2021/5/19
 
 #以下脚本主要适用 jd docker v3 & v4  , jd_ql 暂时无法使用
@@ -16,21 +16,29 @@ notify="/jd/notify.js"
 my_notify="/jd/sendNotify.js"
 my_ver_str=`cat ${my_config_file} | grep "Version"`
 my_docker_str=`cat ${my_config_file} | grep "NPCTL"`
-#my_diy_flag=`cat ${my_config_file} | grep "NPDIY"`
+my_download_str=`cat ${my_config_file} | grep "DOWNCTL"`
 my_ver_id=${my_ver_str: 12: 2}
 my_docker_id=${my_docker_str: 10: 7}
-#my_diy_flag=${my_diy_flag: 10: 7}
+my_download_flag=${my_download_str: 10: 7}
 target_ver_id="v4"
 
 #赋予脚本修改权限
 chmod 666 $my_cron_file
 chmod 666 /jd/sendNotify.js
 
-# 下载需要添加的脚本 link 
+echo "你好，你当前Download Flag是 ： $my_download_flag"
 
+if [ $my_download_flag = "true" ];then
+
+	echo -e "开始更新 home.html & sendNotify.js 文件\n"
+	#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/html/home.html  -O /jd/home.html
+	#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify.js -O /jd/sendNotify.js 
+	echo -e "更新 home.html & sendNotify.js 文件完成\n"
+
+fi 
+
+# 下载需要添加的脚本 link 
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/shell/jd/lpss_del_log.sh -O /jd/config/lpss_del_log.sh  && chmod +x /jd/config/lpss_del_log.sh
-#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/html/home.html  -O /jd/home.html
-#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify.js -O /jd/sendNotify.js 
 #wget -q --no-check-certificate  https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd_unsubscribe_2.js -O /jd/scripts/jd_unsubscribe_2.js
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_super_redrain.js -O /jd/scripts/jd_super_redrain.js
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_half_redrain.js -O /jd/scripts/jd_half_redrain.js
@@ -45,7 +53,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/lpss_scripts/master/jd_unsubscribe.js -O /jd/scripts/jd_clear_shop.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_mother_jump.js -O /jd/scripts/jd_z_mother_jump.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_flp.js -O /jd/scripts/jd_adolf_flp.js
-wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_oneplus.js /jd/scripts/jd_adolf_oneplus.js
+wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_oneplus.js -O /jd/scripts/jd_adolf_oneplus.js
 
 
 #添加需要添加的脚本 name
