@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 脚本作者 ：  lpssxs
-# 更新时间 ：  2021/5/12
+# 更新时间 ：  2021/5/19
 
 #以下脚本主要适用 jd docker v3 & v4  , jd_ql 暂时无法使用
 #下载后请放于  /jd/config/ 目录下
@@ -16,8 +16,10 @@ notify="/jd/notify.js"
 my_notify="/jd/sendNotify.js"
 my_ver_str=`cat ${my_config_file} | grep "Version"`
 my_docker_str=`cat ${my_config_file} | grep "NPCTL"`
+#my_diy_flag=`cat ${my_config_file} | grep "NPDIY"`
 my_ver_id=${my_ver_str: 12: 2}
 my_docker_id=${my_docker_str: 10: 7}
+#my_diy_flag=${my_diy_flag: 10: 7}
 target_ver_id="v4"
 
 #赋予脚本修改权限
@@ -32,6 +34,7 @@ chmod 666 /jd/sendNotify.js
 #wget -q --no-check-certificate  https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd_unsubscribe_2.js -O /jd/scripts/jd_unsubscribe_2.js
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_super_redrain.js -O /jd/scripts/jd_super_redrain.js
 #wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_half_redrain.js -O /jd/scripts/jd_half_redrain.js
+#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_friend.js -O /jd/scripts/jd_friend.js
 wget -q --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/monk-coder/dust/dust/normal/monk_shop_lottery.js -O /jd/scripts/jd_monk_shop_lottery.js
 wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdresource/jd_syj.js -O /jd/scripts/jd_syj.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/nianyuguai/longzhuzhu/main/qx/jd_super_redrain.js  -O /jd/scripts/jd_npc_redrain.js 
@@ -40,7 +43,9 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_sc
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/lpss_scripts/master/jd_market_lottery.js -O /jd/scripts/jd_market_lottery.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_pk.js -O /jd/scripts/jd_adolf_pk.js 
 wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/lpss_scripts/master/jd_unsubscribe.js -O /jd/scripts/jd_clear_shop.js
-wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/jd_friend.js -O /jd/scripts/jd_friend.js
+wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_mother_jump.js -O /jd/scripts/jd_z_mother_jump.js
+wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_flp.js -O /jd/scripts/jd_adolf_flp.js
+wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_oneplus.js /jd/scripts/jd_adolf_oneplus.js
 
 
 #添加需要添加的脚本 name
@@ -54,7 +59,9 @@ jd_npc_redrain
 jd_daily_lottery
 jd_monk_shop_lottery
 jd_adolf_pk
-jd_friend
+jd_z_mother_jump
+jd_adolf_flp
+jd_adolf_oneplus
 "
 
 #添加需要添加脚本的 cron
@@ -69,12 +76,16 @@ jd_npc_redrain="0 0-23/1 * * * jd jd_npc_redrain"
 jd_daily_lottery="13 1,22,23 * * * jd jd_daily_lottery"
 jd_adolf_pk="15 8,13,18 17-31 5 * jd jd_adolf_pk"
 jd_friend="40 16 * * * jd jd_friend"
+jd_z_mother_jump="5 8,14,20 19-25 5 * jd jd_z_mother_jump"
+jd_adolf_flp="15 9 * 5,6 * jd jd_adolf_flp"
+jd_adolf_oneplus="25 9 * 5,6 * jd jd_adolf_oneplus"
+
 
 
 
 #添加需要删除的脚本的 name
 my_scripts_list_del="
-jd_adolf_hf
+jd_friend
 "
 
 #awk '{print $NF}' filename
