@@ -19,7 +19,7 @@ my_docker_str=`cat ${my_config_file} | grep "NPCTL"`
 my_download_str=`cat ${my_config_file} | grep "DWCTL"`
 my_ver_id=${my_ver_str: 12: 2}
 my_docker_id=${my_docker_str: 10: 7}
-my_download_flag=${my_download_str: 10: 4}
+my_download_flag=${my_download_str: 10: 5}
 target_ver_id="v4"
 
 #赋予脚本修改权限
@@ -28,7 +28,7 @@ chmod 666 /jd/sendNotify.js
 
 echo "你好，你当前使用JD Docker 版本： $my_ver_id"
 echo "你好，你当前使用JD Docker ID ：  $my_docker_id"
-echo "你好，你当前Download Flag是 ： $my_download_flag"
+echo -e "你好，你当前Download Flag是 ： $my_download_flag \n"
 
 if [ $target_ver_id = $my_ver_id ];then
 echo -e "无需更新 notify 文件~\n"
