@@ -26,15 +26,26 @@ target_ver_id="v4"
 chmod 666 $my_cron_file
 chmod 666 /jd/sendNotify.js
 
+echo "你好，你当前使用JD Docker 版本： $my_ver_id"
+echo "你好，你当前使用JD Docker ID ：  $my_docker_id"
 echo "你好，你当前Download Flag是 ： $my_download_flag"
+
+if [ $target_ver_id = $my_ver_id ];then
+echo -e "无需更新 notify 文件~\n"
+else
+echo -e "正在更新 notify 文件~\n"
+wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/notify.js -O /jd/notify.js
+fi
+
 
 if [ $my_download_flag = "true" ];then
 
 	echo -e "开始更新 home.html & sendNotify.js 文件\n"
-	#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/html/home.html  -O /jd/home.html
-	#wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify.js -O /jd/sendNotify.js 
+	wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/html/home.html  -O /jd/home.html
+	wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/sendNotify.js -O /jd/sendNotify.js 
 	echo -e "更新 home.html & sendNotify.js 文件完成\n"
-
+else
+	echo -e "无需更新 home.html & sendNotify.js 文件\n"
 fi 
 
 # 下载需要添加的脚本 link 
@@ -96,22 +107,6 @@ jd_adolf_flp
 "
 
 #awk '{print $NF}' filename
-
-
-
-
-echo "你好，你当前使用JD Docker 版本： $my_ver_id"
-echo "你好，你当前使用JD Docker ID ：  $my_docker_id"
-
-
-if [ $target_ver_id = $my_ver_id ];then
-echo -e "无需更新 notify 文件~\n"
-else
-echo -e "正在更新 notify 文件~\n"
-wget -q --no-check-certificate https://raw.githubusercontent.com/forpw2009/my_scripts/main/js_code/jd/notify.js -O /jd/notify.js
-fi
-
-
 
 
 
