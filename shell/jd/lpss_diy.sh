@@ -67,6 +67,7 @@ wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_oneplus.js -O /jd/scripts/jd_adolf_oneplus.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_martin.js -O /jd/scripts/jd_adolf_martin.js
 wget -q --no-check-certificate https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_mi.js -O /jd/scripts/jd_adolf_mi.js
+wget -q --no-check-certificate https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jump.js -O /jd/scripts/jd_jump.js
 
 #添加需要添加的脚本 name
 my_scripts_list_add="
@@ -83,6 +84,7 @@ jd_z_mother_jump
 jd_adolf_oneplus
 jd_adolf_martin
 jd_adolf_mi
+jd_jump
 "
 
 #添加需要添加脚本的 cron
@@ -102,6 +104,7 @@ jd_adolf_flp="15 9 * 5,6 * jd jd_adolf_flp"
 jd_adolf_oneplus="25 9 * 5,6 * jd jd_adolf_oneplus"
 jd_adolf_martin="19 9 20-31 5 * jd jd_adolf_martin"
 jd_adolf_mi="15 9 21-27 5 * jd jd_adolf_mi"
+jd_jump="1 0,11,21 * * * jd jd_jump"
 
 
 
