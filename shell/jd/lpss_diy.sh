@@ -107,7 +107,7 @@ jd_adolf_oneplus="25 9 * 5,6 * jd jd_adolf_oneplus"
 jd_adolf_martin="19 9 20-31 5 * jd jd_adolf_martin"
 jd_adolf_mi="15 9 21-27 5 * jd jd_adolf_mi"
 jd_jump="1 0,11,21 * * * jd jd_jump"
-jd_adolf_urge="28 9 18-26 5 * jd jd_adolf_urge"
+jd_adolf_urge="28 18 18-26 5 * jd jd_adolf_urge"
 
 
 
